@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-Editor</title>
+</head>
+ <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: lightgray;
+        }
+
+        h1 {
+            color: darkblue;
+        }
+
+        #editor {
+            width: 500px;
+            height: 200px;
+            margin: 20px auto;
+            padding: 15px;
+            background-color: white;
+            color: black;
+            font-family: Arial;
+            border: 2px solid black;
+            text-align: left;
+        }
+
+        button {
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        @media (max-width: 600px) {
+    .buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    button {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+
+    .editor {
+        width: 95%;
+    }
+
+    .container {
+        width: 95%;
+    }
+}
+    </style>
+</head>
+
+<body>
+
+    <h1>Text Editor</h1>
+
+    <h3>Background Colour</h3>
+
+    <button onclick="changeBackground('#FFF4E6')">Peach</button>
+    <button onclick="changeBackground('#E3F2FD')">Sky Blue</button>
+    <button onclick="changeBackground('#E8F5E9')">Mint</button>
+    <button onclick="changeBackground('#F3E5F5')">Lavender</button>
+    <button onclick="changeBackground('#FFF9C4')">Cream</button>
+
+    <h3>Text Colour</h3>
+
+    <button onclick="changeTextColor('red')">Red</button>
+    <button onclick="changeTextColor('blue')">Blue</button>
+    <button onclick="changeTextColor('green')">Green</button>
+    <button onclick="changeTextColor('purple')">Purple</button>
+    <button onclick="changeTextColor('black')">Black</button>
+
+    <h3>Font Family</h3>
+
+    <button onclick="changeFont('Arial')">Arial</button>
+    <button onclick="changeFont('Georgia')">Georgia</button>
+    <button onclick="changeFont('Verdana')">Verdana</button>
+    <button onclick="changeFont('Courier New')">Courier</button>
+    <button onclick="changeFont('Times New Roman')">Times New Roman</button>
+
+    <div id="editor" contenteditable="true">
+        Type your text here...
+    </div>
+
+    <script>
+
+        function changeBackground(color) {
+            document.getElementById("editor").style.backgroundColor = color;
+        }
+
+        function changeTextColor(color) {
+            document.getElementById("editor").style.color = color;
+        }
+
+        function changeFont(font) {
+            document.getElementById("editor").style.fontFamily = font;
+        }
+
+    </script>
+
+
+    
+</body>
+</html>
